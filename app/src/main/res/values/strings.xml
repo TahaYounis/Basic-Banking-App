@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Basic Banking App</string>
+    <string name="transfer_money_image">transfer_money_image</string>
+    <string name="view_all_customer">View All Customer</string>
+    <string name="profile_image">profile image</string>
+    <string name="select_customer_to_send_money_for_him">Select customer to send money</string>
+</resources>

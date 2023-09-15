@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="taha.younis.basicbankingapp.ui.FragmentHome"
+        android:label="FragmentHome">
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentCustomers4"
+            app:destination="@id/fragmentCustomers" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCustomers"
+        android:name="taha.younis.basicbankingapp.ui.FragmentCustomers"
+        android:label="FragmentCustomers">
+        <action
+            android:id="@+id/action_fragmentCustomers_to_fragmentCustomerDetails"
+            app:destination="@id/fragmentCustomerDetails"
+            app:popUpTo="@id/fragmentCustomers" />
+        <action
+            android:id="@+id/action_fragmentCustomers_to_fragmentHistory2"
+            app:destination="@id/fragmentHistory2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentCustomerDetails"
+        android:name="taha.younis.basicbankingapp.ui.FragmentCustomerDetails"
+        android:label="FragmentCustomerDetails">
+
+        <argument
+            android:name="customer"
+            app:argType="taha.younis.basicbankingapp.data.Customer" />
+        <action
+            android:id="@+id/action_fragmentCustomerDetails_to_fragmentSeletctCustomer"
+            app:destination="@id/fragmentSeletctCustomer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHistory2"
+        android:name="taha.younis.basicbankingapp.ui.FragmentHistory"
+        android:label="FragmentHistory" />
+    <fragment
+        android:id="@+id/fragmentSeletctCustomer"
+        android:name="taha.younis.basicbankingapp.ui.FragmentSelectCustomer"
+        android:label="FragmentSeletctCustomer">
+
+        <action
+            android:id="@+id/action_fragmentSeletctCustomer_to_fragmentCustomers"
+            app:destination="@id/fragmentCustomers"
+            app:popUpTo="@id/fragmentHome" />
+        <argument
+            android:name="money"
+            app:argType="integer" />
+        <argument
+            android:name="customer"
+            app:argType="taha.younis.basicbankingapp.data.Customer" />
+    </fragment>
+</navigation>
